@@ -1,0 +1,119 @@
+/* 
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+/* Variables */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+:root {
+  --dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --s-main-white: hsla(0, 0%, 100%, 0.75);
+  --s-stat-white: hsla(0, 0%, 100%, 0.6);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  max-width: 1440px;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  background-color: var(--dark-blue);
+}
+
+h1 {
+  color: var(--white);
+}
+
+.container-box {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 6px;
+}
+
+.article-section {
+  padding: 16px;
+}
+.text-highlight {
+  color: var(--violet);
+}
+.article-paragraph {
+  color: var(--s-main-white);
+  line-height: 24px;
+  padding-top: 16px;
+}
+
+.profile-status {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.profile-name {
+  color: var(--s-stat-white);
+}
+.image-section {
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--violet);
+  z-index: 10;
+  opacity: 0.6;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.image-section img {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  z-index: 5;
+}
+
+@media screen and (min-width: 560px) {
+  .profile-status {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .container-box {
+    flex-direction: row-reverse;
+    flex-basis: auto;
+    position: absolute;
+    max-width: 1000px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  .image-section img {
+    height: 100%;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 0;
+  }
+  .image-overlay {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 0;
+  }
+
+  .article-section {
+    width: 50%;
+    padding: 2rem;
+  }
+}
