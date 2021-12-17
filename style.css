@@ -37,6 +37,7 @@ h1 {
 
 .container-box {
   display: flex;
+  max-width: 1000px;
   flex-direction: column;
   height: auto;
   background-color: var(--dark-desaturated-blue);
@@ -86,7 +87,11 @@ h1 {
 @media screen and (min-width: 560px) {
   .profile-status {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+  }
+
+  .profile-card {
+    margin-right: 2.8rem;
   }
 }
 @media screen and (min-width: 1000px) {
